@@ -3,6 +3,17 @@
 import React, {useState} from 'react';
 import Item from './item';
 
+function ItemList ({ items, onItemSelect}) {
+    return (
+        <div>
+            <h2>Shopping List</h2>
+            {items.map((item) => (
+                <Item key={item.id} {...item} onSelect={onItemSelect} />
+            ))}
+            </div>
+    );
+}
+
 const ItemList = ({item: initialItems}) => {
     const [sortBy, setSortBy] = useState("name");
 
@@ -83,7 +94,7 @@ return (
             </svg>
 
             Group by Category 
-            <span className={'absoulte inset-0 ${sortBy === "name" ? "bg-white bg-opacity-20" : "bg-opacity-0"} group-hover:bg-opacity-0 transition-opacity duration-300'}></span>
+            <span className={'absolute inset-0 ${sortBy === "name" ? "bg-white bg-opacity-20" : "bg-opacity-0"} group-hover:bg-opacity-0 transition-opacity duration-300'}></span>
            </button>
         </div>
 

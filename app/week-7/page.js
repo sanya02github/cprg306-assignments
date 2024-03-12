@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import Link from 'next/link';
 import ItemList from './item-list';
 import NewItem from './new-item';
+import MealIdeas from './meal-ideas';
 import itemsData from './items.json';
 
 const Page = () => {
@@ -11,6 +12,12 @@ const Page = () => {
     const handleAddItem = (newItem) => {
         setItems(currentItems => [...currentItems, newItem]);
     };
+
+    const handleItemSelect = (name) => {
+        const cleanedName = name.replace(/([\u2700-\u27BF] | [\uE000-\uF8FF] | [ - ] | [ - ] | [\u2011-\u26FF] | [ - ])/g, '').trim();
+        setSelectedItemName(cleanedName);
+    };
+
 
     return (
         <main className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-8">
