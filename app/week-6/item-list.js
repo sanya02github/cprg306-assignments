@@ -48,7 +48,7 @@ const ItemList = ({item: initialItems}) => {
                 </ul>
             </div>
         ));
-    } else  {
+    } else,  {
         return(
             <ul className="space-y-4 animate-fadeIn">
             {items.map(item => (
@@ -58,7 +58,7 @@ const ItemList = ({item: initialItems}) => {
                 </ul>
         );
     }
-};
+},
 
 return (
     <div className="w-full max-w-4x1 mx-auto mt-8">
@@ -83,11 +83,12 @@ return (
             </svg>
 
             Group by Category 
-            <span className={'absoulte inset-0 ${sortBy === "name" ? "bg-white bg-opacity-20" : "bg-opacity-0"} group-hover:bg-opacity-0 transition-opacity duration-300'}></span>
+            <span className={'absolute inset-0 ${sortBy === "name" ? "bg-white bg-opacity-20" : "bg-opacity-0"} group-hover:bg-opacity-0 transition-opacity duration-300'}></span>
            </button>
         </div>
 
         {renderItems()}
+
     </div>
     );
 };
