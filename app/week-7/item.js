@@ -1,25 +1,20 @@
 import React from 'react';
 
-function Item({name, quantity, catgeory, onSelect}) {
+const Item = ({name, quantity, category, onSelect}) => {
+    const handleClick = () => {
+        onSelect({name});
+    };
     return (
-        <div onClick={() => onSelect(name)}>
-            <p> Name: {name}</p>
-            <p> Quantity: {quantity}</p>
-            <p> Category: {category}</p>
-        </div>
-    );
-}
-
-const Item = ({name, quantity, category}) => {
-    return (
-        <li className="bg-white rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
-            <div className="p-5">
-                <p className="text-lg font-semibold tracking-wide text-gray-600">
-                {name}</p>
-                <p className="text-indigo-500">{category}</p>
-                <p className="text-gray-600">Quantity: {quantity}</p>
+        <div className="w-1/2" onClick={handleClick}>
+          <li className ="flex bg-gray-100 p-4 m-2 rounded cursor-pointer w-60 mt-10">
+            <div>
+                <h2 className="text=xl font-bold">{name}</h2>
+                <h3 className="text-md text-gray-600">
+                    Buy {quantity} in {category}
+                </h3>
             </div>
-        </li>
+         </li>
+        </div>
     );
 };
 

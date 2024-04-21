@@ -1,12 +1,21 @@
 import React from 'react';
 
-const Item = ({name, quantity, category}) => {
+const Item = ({name, quantity, category, onSelect}) => {
+    const handleClick = () => {
+        onSelect({name});
+    };
+
     return (
-        <li className="flex justify-between items-center py-3 px-4 bg-white/90 backdrop-blur-md rounded-lg shadow hover:shadowing-lg transition-shodow duration-300 ease-in-out m-2">
-            <span className="text-gray-800 font-medium">{name}</span>
-            <span className="text-blue-600 font-semibold">{quantity} ({category})
-            </span>
+        <div className="w-1/2" onClick={handleClick}>
+        <li className="flex bg-gray-100 p-4 m-2 rounded cursor-pointer w-60 mt-10">
+            <div>
+            <h2 className="text-xl font-bold">{name}</h2>
+            <h3 className="text-md text-gray-600">
+                Buy {quantity} in {category}
+            </h3>
+            </div>
         </li>
+        </div>
     );
 };
 
