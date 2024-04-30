@@ -14,7 +14,7 @@ function NewItem({ onAddItem}) {
             id: Math.random().toString(36).substring(2,9),
             name,
             quantity,
-            category,
+            category
         };
 
         onAddItem(item);
@@ -25,7 +25,7 @@ function NewItem({ onAddItem}) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto my-10 p-4 rounded-lg">
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto my-10 p-4 shadow-lg rounded-lg">
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                     Name
@@ -61,7 +61,7 @@ function NewItem({ onAddItem}) {
                         <select
                         id="category"
                         value={category}
-                        onChnage={e => setCategory(e.target.value)}
+                        onChange={e => setCategory(e.target.value)}
                         className="block appearance-none w-full bg-white border border-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         required
                         >
@@ -78,8 +78,7 @@ function NewItem({ onAddItem}) {
                         <option value="other">Other</option>
                     </select>
                 </div>
-            <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                Add Item
+            <button type="submit"
             </button>
         </form>
     );

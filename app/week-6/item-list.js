@@ -2,22 +2,18 @@
 import React from 'react';
 import Item from './item';
 
-const ItemList = ({items, onItemSelect}) => {
-    const items_copy = items;
+const ItemList = ({items}) => {
     return (
-        <div className="container px-3" style= {{width: "40%", marginTop: "-30px"}}>
-            <div style={{display: "flex", marginBottom: "10px"}}></div>
-
-            <ul className="w-auto">
-                {items_copy.map((item) => (
+        <div className="container px-3" style= {{width: "100%", marginTop: "20px"}}>
+            <ul>
+                {items.map((item) => (
                     <Item
                     key={item.id}
                     {...item}
-                    onSelect={onmItemSelect}
-                    />
+                />
                 ))}
             </ul>
-            </div>
+        </div>
     );
 };
 

@@ -1,12 +1,8 @@
 import React from 'react';
 
-const Item = ({name, quantity, category, onSelect}) => {
-    const handleClick = () => {
-        onSelect({name});
-    };
-
+const Item = ({name, quantity, category }) => {
+    
     return (
-        <div className="w-1/2" onClick={handleClick}>
         <li className="flex bg-gray-100 p-4 m-2 rounded cursor-pointer w-60 mt-10">
             <div>
                 <h2 className="text-xl font-bold">{name}</h2>
@@ -15,7 +11,6 @@ const Item = ({name, quantity, category, onSelect}) => {
                 </h3>
             </div>
         </li>
-        </div>
     );
 };
 

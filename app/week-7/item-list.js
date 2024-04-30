@@ -3,12 +3,10 @@ import Item from './item';
 
 
 const ItemList = ({items, onItemSelect}) => {
-    const items_copy = items;
     return (
-        <div className="container px-3" style={{width:"40%", marginTop: "-30px"}}>
-            <div style={{display:"flex", marginBottom:"10px"}}></div>
-            <ul className="w-auto">
-                {items_copy.map((item) => (
+        <div className="container px-3" style={{width:"40%", marginTop: "30px"}}>
+            <ul>
+                {items.map((item) => (
                     <Item
                     key={item.id}
                     {...item}
